@@ -1,218 +1,108 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <title>Shanmukha</title>
   <meta charset="utf-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>task1</title>
 	
-
-	<style type="text/css">
-		.font1{font-size: 11px!important; text-align: right!important;}
-		
-
-
-
-@mixin btn-border-drawing($color: #ccc, $hover: black, $width: 2px, $vertical: top, $horizontal: left, $duration: 0.25s) {
-  box-shadow: inset 0 0 0 $width $color;
-  color: $color;
-  transition: color $duration $duration/3;
-  position: relative;
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+	<link rel="stylesheet" type="text/css" href="css.style.css">
+  <style>
   
-  &::before,
-  &::after {
-    border: 0 solid transparent;
-    box-sizing: border-box;
-    content: '';
-    pointer-events: none;
-    position: absolute;
-    width: 0; height: 0;
-    
-    #{$vertical}: 0; 
-    #{$horizontal}: 0;
-  }
-
-  &::before {
-    $h-side: if($horizontal == 'left', 'right', 'left');
-    
-    border-#{$vertical}-width: $width;
-    border-#{$h-side}-width: $width;
-  }
+  </style>
+	<script type="text/javascript" src="script.js"></script>
+	<script src="https://kit.fontawesome.com/294c98d154.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( ".sortable" ).sortable();
+    $( ".sortable" ).disableSelection();
+  } );
+	  
+	   $(document).ready(function(){
+        $("#listbutton").click(function(){
+            $('<li class="li1 listbolck"><span class=""></span> <h3 class="ttl">done</h3> <ul class="sortable" id="ul4"> <li class="li2">list item</li> </ul> <button id="itembutton4">Add new list item</button> </li>').appendTo(".ul1"); 
+        });
+    });
+	  
+	    $(document).ready(function(){
+        $(".itembutton").click(function(){
+            $(".ul2").append("<li class=\"li2\">list item</li>"); 
+        });
+    });
+	    $(document).ready(function(){
+        $(".itembutton2").click(function(){
+            $(".ul3").append("<li class=\"li2\">list item</li>"); 
+        });
+    });
   
-  &::after {
-    $v-side: if($vertical == 'top', 'bottom', 'top');
-    
-    border-#{$v-side}-width: $width;
-    border-#{$horizontal}-width: $width;
-  }
-  
-  &:hover {
-    color: $hover;
-    
-    &::before,
-    &::after {
-      border-color: $hover;
-      transition: border-color 0s, width $duration, height $duration;
-      width: 100%;
-      height: 100%;
-    }
-    
-    &::before { transition-delay: 0s, 0s, $duration; }
-    
-    &::after { transition-delay: 0s, $duration, 0s; }
-  }
-}
-
-.draw-border {
-  @include btn-border-drawing(#58afd1, #ffe593, 4px, bottom, right);
-}
-
-.btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  line-height: 1.5;
-  font: 700 1.2rem 'Roboto Slab', sans-serif;
-  padding: 1em 2em;
-  letter-spacing: 0.05rem;
-  
-  &:focus { outline: 2px dotted #55d7dc; }
-}
-
-
-
-h1 {
-  position: relative;
-  text-transform: uppercase;
-  letter-spacing: 6px;
-  font-size: 10vw;
-  font-weight: 900;
-  text-decoration: none;
-  color: white;
-  display: inline-block;
-  background-size: 120% 100%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-background-clip: text;
-  -moz-text-fill-color: transparent;
-  -ms-background-clip: text;
-  -ms-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
-  background-image: linear-gradient(45deg, 
-                    #7794ff, 
-                    #44107A,
-                    #FF1361,
-                    #FFF800);
-  animation: .10s shake .100s alternate;
-}
-h5 {
-  position: relative;
-  text-transform: uppercase;
-  letter-spacing: 6px;
-  font-size: 6vw;
-  font-weight: 900;
-  text-decoration: none;
-  color: white;
-  display: inline-block;
-  background-size: 120% 100%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-background-clip: text;
-  -moz-text-fill-color: transparent;
-  -ms-background-clip: text;
-  -ms-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
-  background-image: linear-gradient(45deg, 
-                    #7794ff, 
-                    #44107A,
-                    #FF1361,
-                    #FFF800);
-  animation: .100s shake infinite alternate;
-  
-}
-
-
-@keyframes shake {
-  0% { transform: skewX(-15deg); }
-  5% { transform: skewX(15deg); }
-  10% { transform: skewX(-15deg); }
-  15% { transform: skewX(15deg); }
-  20% { transform: skewX(0deg); }
-  100% { transform: skewX(0deg); }  
-}
-
-.register-button {  
-    border: 2px solid transparent;
-    border-image: linear-gradient(to right, #0865F1 0%, #C704F6 100%);
-    border-image-slice: 1;
-	border-radius: 5px;
-  
-    background: #fff;
-    color: #000;
-    font-size: 20px;
-    padding: 10px 50px;
-    text-decoration: none;
-    font-weight:bold;
-    text-transform: uppercase;
-	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
-	margin: 0px 10px 0px 20px;
-	
-}
-
-.register-button:hover {
-    background-color: white;
-    background: linear-gradient(to right, #0865F1, #C704F6);
-    color: #fff;
-	text-decoration: none;
-}
-		.navbtn{color: #E01D20;}
-		.brandnam{background-color: #C6F0F9;color: #000000;padding: 20px;border-radius: 10px;font-weight: bold;font-size: 30px;}
-		.blktxt{color: #000000; font-size: 25px;}
-		a:hover{text-decoration: underline;color: #E01D20;}
-		.pad{padding-bottom: 10px;}
-		.txtctr{ position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 75%;
-    height: 75%;
-    margin: auto;}
-
-	</style>
+   
+$(document).ready(function(){
+        $("#itembutton4").click(function(){
+            $("#ul4").append("<li class=\"li2\">list item</li>"); 
+        }); });
+  </script>
 </head>
 <body>
-<div class="container txtctr">
-	<div align="left" class=""><h5>i am</h5></div>
-		<h1><span class="">Shanmukha</span></h1>
-		<div align="right"><h5><span class="">web</span></h5></div>
+ <header>
 	
-
-	<nav class="navbar navbar-expand-md">
-	<!--<a class="navbar-brand brandnam" href="#">Shanmukha Reddy</a>-->
-	<button class="navbar-toggler navbtn " type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <span class="navbar-toggler-icon blktxt">Menu</span>
-		</button>
-		<div class="collapse navbar-collapse nav justify-content-center" id="collapsibleNavbar">
-		<ul class="navbar-nav">
-      <li class="nav-item pad justify-content-center">
-        <a class="nav-link blktxt justify-content-center" href="#"><a class="register-button" href="#tickets">About</a></a>
-      </li>
-      <li class="nav-item pad">
-        <a class="nav-link blktxt" href="#"><a class="register-button" href="#tickets">Projects</a></a>
-      </li>
-      <li class="nav-item pad">
-        <a class="nav-link blktxt" href="#"><a class="register-button" href="#tickets">Contact</a></a>
-      </li>    
-    </ul>
-		</div>
+<h1>Work Sheet </h1>
+	
+	</header>
+	<nav>
+	<h2>Shanmukha</h2>
 	</nav>
+	<section>
+	  
+    <ul class="ul1 sortable" id="sortable">
+		
+		<!--1block s-->
+        <li class="li1 listbolck"><span class=""></span>
+			
+			
+			<h3 class="ttl">Assigned</h3>
+			<ul class="ul2 sortable">
+        <li class="li2">list item</li>
+        
+    </ul>
+		
+		<button class="itembutton">Add new list item</button>
+
+		</li>
+		<!--1block s-->
+		<!--2block s-->
+		
+        <li class="li1 listbolck"><span class=""></span>
+		
+		<h3 class="ttl">Doing</h3>
+			
+		<ul class="ul3 sortable">
+        <li class="li2">list item</li>
+        
+    </ul>
+		<button class="itembutton2">Add new list item</button>
+		</li>
+		
+		<!--2block s-->
+        
+    </ul>
+		<button id="listbutton"><i class="fa fa-plus" aria-hidden="true"></i>Add new list</button>
+	</section>
 	
-</div>
+	
+	
+<!--<ul class="sortable">
+  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1</li>
+  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 2</li>
+  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 3</li>
+  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 4</li>
+  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 5</li>
+  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 6</li>
+  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 7</li>
+</ul>-->
+ 
+ 
 </body>
 </html>
