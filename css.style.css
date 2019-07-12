@@ -1,0 +1,32 @@
+
+body{background-color: #dd8594;margin: 0px;padding: 0px;}
+header{background-color: #df2c4a; height: 40px;}
+h1{font-family: 'Open Sans', sans-serif;text-align: center;font-size: 25px;color: #381a51;margin: 0px;padding: 0px;}
+nav{background-color: #dd8594; height: 40px;}
+h2{font-family: 'Open Sans', sans-serif;text-align:left;font-size: 20px;color: #381a51;margin: 0px;padding: 0px;padding-left: 20px;}
+section{height: auto;}
+.ul1{list-style-type: none;
+  }
+.li1 {
+  float: left;
+	padding: 0px 0px;;overflow: hidden;
+}
+#listbutton{float: left;background-color: #e36b7f;border: none;padding: 10px 32px;}
+button:hover{}
+#draggable { width: 150px; height: 150px; padding: 0.5em; }
+#sortable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+  
+.listbolck{background-color: #dfe1e6; width: 200px;height: auto;overflow: hidden;border-radius: 10px;margin: 10px;}
+
+
+.ul2{list-style-type: none;
+  }
+.li2 {
+  
+	padding: 0px 20px;;overflow: hidden;
+}
+.itembutton{background-color: #e36b7f;border: none;padding: 10px 32px; width: 100%;}
+.itembutton2{background-color: #e36b7f;border: none;padding: 10px 32px; width: 100%;}
+#itembutton4{background-color: #e36b7f;border: none;padding: 10px 32px; width: 100%;}
+
+h3{font-family: 'Open Sans', sans-serif;text-align: center;font-size: 15px;color: #381a51;margin: 0px;padding: 10px 0px;}
