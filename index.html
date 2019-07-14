@@ -1,53 +1,198 @@
 <!doctype html>
 <html lang="en">
-<head>
+  <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>task1</title>
-	
+  <title>Task Manager</title>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <link rel="stylesheet" href="/resources/demos/style.css">
-	<link rel="stylesheet" type="text/css" href="css.style.css">
-  <style>
-  
-body{background-color: #dd8594;margin: 0px;padding: 0px;}
-header{background-color: #df2c4a; height: 40px;}
-h1{font-family: 'Open Sans', sans-serif;text-align: center;font-size: 25px;color: #381a51;margin: 0px;padding: 0px;}
-nav{background-color: #dd8594; height: 40px;}
-h2{font-family: 'Open Sans', sans-serif;text-align:left;font-size: 20px;color: #381a51;margin: 0px;padding: 0px;padding-left: 20px;}
-section{height: auto;}
+  <link rel="stylesheet" type="text/css" href="css.style.css">
+  <style type="text/css">
+body{background-color: rgb(0, 174, 204);margin: 0px;padding: 0px;font-family: 'Open Sans', sans-serif;}
+header{background-color: #0094ae; height: 40px;display:flex;width:100%;}
+h1{font-family: 'Open Sans', sans-serif;text-align: center;font-size: 25px;color: #ffffff;margin: 0px;padding: 5px;}
+nav{background-color: rgb(0, 174, 204); height: 40px;display:flex;height: auto;padding: 8px 4px 8px 8px;position: relative;margin-top:5px;}
+h2{font-family: 'Open Sans', sans-serif;text-align:left;font-size: 20px;color: #ffffff;margin-top: 5px;padding: 0px;padding-left: 15px;}
+section{height: auto; width:100%;}
 .ul1{list-style-type: none;
   }
 .li1 {
   float: left;
 	padding: 0px 0px;;overflow: hidden;
 }
-#listbutton{float: left;background-color: #e36b7f;border: none;padding: 10px 32px;}
-button:hover{}
+#listbutton{float: left;background-color: rgba(0,0,0,.12);border: none;padding: 5px 10px;transition: color 85ms ease-in;width: 150px;height: auto;overflow: hidden;border-radius: 3px;color:#ffffff;text-align:left;margin-top:10px;}
+#listbutton:hover{background-color:#4dc6db;}
 #draggable { width: 150px; height: 150px; padding: 0.5em; }
-#sortable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+#sortable { list-style-type: none; margin: 0; padding: 0; width: 100%; }
   
-.listbolck{background-color: #dfe1e6; width: 200px;height: auto;overflow: hidden;border-radius: 10px;margin: 10px;}
+.listbolck{background-color: #dfe1e6; width: 277px;height: auto;overflow: hidden;border-radius: 3px;margin: 20px;}
 
-
+.ttl{colour:#172b4d;font-size: 14px;line-height: 20px;
+font-weight: 400;text-align:left;margin-left:0px;}
 .ul2{list-style-type: none;
   }
 .li2 {
   
-	padding: 0px 20px;;overflow: hidden;
+	padding: 0px 0px 0px 0px;;overflow: hidden;height:auto;
 }
-.itembutton{background-color: #e36b7f;border: none;padding: 10px 32px; width: 100%;}
-.itembutton2{background-color: #e36b7f;border: none;padding: 10px 32px; width: 100%;}
-#itembutton4{background-color: #e36b7f;border: none;padding: 10px 32px; width: 100%;}
+.itembutton{background-color: #dfe1e6;border: none;padding: 10px 10px; width: 100%; text-align:left;}
+.itembutton2{background-color: #dfe1e6;border: none;padding: 10px 10px; width: 100%; text-align:left;}
+#itembutton4{background-color: #dfe1e6;border: none;padding: 10px 10px; width: 100%; text-align:left;}
+.itembutton:hover{background-color:rgba(9,30,66,.13);}
+.itembutton2:hover{background-color:rgba(9,30,66,.13);}
+#itembutton4:hover{background-color:rgba(9,30,66,.13);}
+h3{font-family: 'Open Sans', sans-serif;text-align: center;font-size: 15px;color: #381a51;margin: 0px;padding: 0px 0px;}
+.itemstyl{font-family: 'Open Sans', sans-serif;border:none;align-content:center;border-radius:5px;font-size: 14px;width: 243px; height: 50px;  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.alngctr{padding:0px 8px;}
+.btnitm{background-color: #5aac44;border: none;padding: 10px; margin-top:10px;border-radius:5px;font-size: 14px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);color:#ffffff;}
+.btnitm:hover{background-color: #61bd4f;}
+.cnl{padding:0px 10px;font-size:14px;}
 
-h3{font-family: 'Open Sans', sans-serif;text-align: center;font-size: 15px;color: #381a51;margin: 0px;padding: 10px 0px;}
+.thrdt{padding-left:119px;;font-size:14px;}
+.thrdt1{padding-left:146px;;font-size:14px;}
+.thrdt2{padding-left:188px;;font-size:14px;}
+.li1{margin:10px;}
+.alngctr1 {padding: 0px 10px;}
+.hdrbar{font-family: 'Open Sans', sans-serif;font-size: 21px;color: #ffffff;margin: 5px;padding: 0px;background-color: hsla(0,0%,100%,.3);height:30px;width:30px;border-radius:5px;}
+.hdrbar:hover{background-color: #00aecc;}
+.hdrbar1:hover{background-color: #00aecc;}
+.search:hover{background-color: #00aecc;}
+.srcicon:hover{background-color: #00aecc;}
+.iconset:hover{background-color: #00aecc;}
+.invt1:hover{background-color: #0094ae;}
+.hom{padding:3px: backgroung-color:#4db4c6;margin: 2px 3px 3px 3px;}
+.hdrbar1{font-family: 'Open Sans', sans-serif;font-size: 21px;color: #ffffff;margin: 5px;padding: 0px;background-color: hsla(0,0%,100%,.3);height:30px;width:100px;border-radius:5px;}
+.brds{font-size:16px;margin-left:12px;margin-bottom:5px;}
+.search{background-color: hsla(0,0%,100%,.3);border-top-left-radius:3px;border-bottom-left-radius:3px;border: none;box-shadow: none;box-sizing: border-box;color: hsla(0,0%,100%,.5);float: left;font-size: 13px;height: 30px;line-height: 19px;margin-top: 4px;;outline: none;padding-left: 8px;padding-right: 30px;transition: width .15s;width: 150px;}
+.srcicon{background-color: hsla(0,0%,100%,.3);box-sizing: border-box;color: hsla(0,0%,100%,.5);font-size: 24px;height: 30px;line-height: 0px;margin-top: 4px;;outline: none;padding-left: 0px;padding-right: 0px;transition: width .15s;width: 40px;border-radius: 0px;}
+.iconset{padding:3px: backgroung-color:#4db4c6;margin: 2px 3px 3px 3px;}
+.logo{padding-left:270px;color: hsla(0,0%,100%,.5);margin:5px;font-size:18px;font-weight:bold;font-family: 'Open Sans', sans-serif;}
+.hdrbar3{font-family: 'Open Sans', sans-serif;font-size: 21px;color: #ffffff;margin-top: 4px;padding: 0px;background-color: hsla(0,0%,100%,.3);
+height:30px;width:30px;border-top-right-radius:3px;border-bottom-right-radius:3px;}
+.hom1{padding:3px: backgroung-color:#4db4c6;margin: 3px 3px 3px 5px;}
+.crl{border-radius: 100%;background-color: #dfe1e6;align-items: center;width:30px;height:30px;margin-top:4px;}
+.crlitm{margin: 5px 3px 3px 10px;}
+.spc{padding-left:390px;}
+.str{margin: 8px 3px 3px 20px;color: #ffffff;font-size:16px;}
+.pip{margin: 8px 3px 3px 10px;color: #ffffff;font-size:16px;}
+.topmrg{margin-top:15px;}
+.spc1{padding-left:15px;}
+.invt{text-align:center;margin-top:5px;font-size:16px;}
+.titel{margin: 10px 0px 0px 10px;padding-top:10px;overflow:hidden;}
+.tite2{margin: 10px 0px 10px 10px;padding-top:10px;overflow:hidden;}
+.padtop{padding-top:10px;}
+</style>
+  </head>
+  <body>
+<header>
+    <div class="hdrbar">
+    <div class="hom"><i class="fa fa-home" aria-hidden="true"></i></div>
+    
+  </div>
+    <div class="hdrbar1">
+    <div class="hom"><i class="fa fa-bar-chart" aria-hidden="true"></i><span class="brds">Boards</span></div>
+  </div>
+    <div>
+    <input type="search" value="" class="search">
+  </div>
+    <div class="hdrbar3"><div class="hom"><i class="fa fa-search" aria-hidden="true"></i></div></div>
+    <div class="logo"><em>Task Manager</em></div>
+    <div align="right" class="spc"></div>
+    <div class="hdrbar">
+    <div class="hom1"><i class="fa fa-plus" aria-hidden="true"></i></div>
+    </div>
+    <div class="hdrbar">
+    <div class="hom1"><i class="fa fa-info-circle" aria-hidden="true"></i></div>
+    </div>
+    <div class="hdrbar">
+    <div class="hom1"><i class="fa fa-bell-o" aria-hidden="true"></i></div>
+    </div>
+    <div class="crl">
+    <div class="crlitm">S</div>
+    </div>
+    <h1></h1>
+  </header>
+<nav>
 
-  </style>
-	<script type="text/javascript" src="script.js"></script>
-	<script src="https://kit.fontawesome.com/294c98d154.js"></script>
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script>
+
+    <h2>Shanmukha</h2>
+    <div class="str"><i class="fa fa-star-o" aria-hidden="true"></i></div>
+    <div class="pip">|</div>
+    <div class="pip">Personal</div>
+        <div class="pip">|</div>
+            <div class="str"><i class="fa fa-lock" aria-hidden="true"></i></div>
+            <div class="pip">Private</div>
+            <div class="pip">|</div>
+            <div class="spc1"></div>
+            <div class="crl">
+    <div class="crlitm">S</div>
+     </div>
+     <div class="spc1"></div>
+    <div class="hdrbar1 invt1">
+    <div class="invt">invite</span></div>
+  </div>
+    </div>
+  </nav>
+<section>
+    <ul class="ul1 sortable" id="sortable">
+    
+    <!--1block s-->
+    <li class="li1 listbolck"><span class=""></span>
+        <div class="padtop"></div>
+        <span class="titel">Things To Do</span><i class="fa fa-ellipsis-h thrdt1" aria-hidden="true"></i>
+        </div>
+        <ul class="ul2 sortable alngctr">
+        <li class="li2" id="rm">
+            <p id="txt"></p>
+            <form id="myForm">
+            
+            <!--<input type="text" name="first-name" class="itemstyl ui-widget-content itemstyl" id="txtfld">-->
+            <textarea type="text" class="ui-widget-content itemstyl" value="" id="txtfld" placeholder="Enter a title for this card…"></textarea>
+            <button type="button" id="submitBtn" class="btnitm">Add Card</button>
+            <i id="rmu" class="fa fa-times cnl" aria-hidden="true"></i><i class="fa fa-ellipsis-h thrdt" aria-hidden="true"></i>
+          </form>
+          </li>
+      </ul>
+        <button class="itembutton"><i class="fa fa-plus cnl" aria-hidden="true"></i>Add another card</button>
+      </li>
+    <!--1block s--> 
+    <!--2block s-->
+    
+    <li class="li1 listbolck">
+    <div class="padtop"></div>
+        <h3 class="ttl"><span class="titel">Doing</span><i class="fa fa-ellipsis-h thrdt2" aria-hidden="true"></i></h3>
+        <div class="padtop"></div>
+        <ul class="ul3 sortable alngctr1">
+        <li class="li2">
+            <form id="myForm">
+            <textarea type="text" class="ui-widget-content itemstyl" value="" id="txtfld" placeholder="Enter a title for this card…"></textarea>
+            <button type="button" id="submitBtn" class="btnitm">Add Card</button>
+            <i id="rmu" class="fa fa-times cnl" aria-hidden="true"></i><i class="fa fa-ellipsis-h thrdt" aria-hidden="true"></i>
+          </form>
+          </li>
+      </ul>
+        <button class="itembutton2"><i class="fa fa-plus cnl" aria-hidden="true"></i>Add another card</button>
+      </li>
+    
+    <!--2block s-->
+    
+  </ul>
+    <button id="listbutton"><i class="fa fa-plus cnl" aria-hidden="true"></i>Add new list</button>
+  </section>
+
+
+
+<script type="text/javascript" src="script.js"></script> 
+<script src="https://kit.fontawesome.com/294c98d154.js"></script> 
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script> 
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
+<script>
+  
+  $( function() {
+    $( ".resizable" ).resizable();
+  } );
+  
   $( function() {
     $( ".sortable" ).sortable();
     $( ".sortable" ).disableSelection();
@@ -55,18 +200,18 @@ h3{font-family: 'Open Sans', sans-serif;text-align: center;font-size: 15px;color
 	  
 	   $(document).ready(function(){
         $("#listbutton").click(function(){
-            $('<li class="li1 listbolck"><span class=""></span> <h3 class="ttl">done</h3> <ul class="sortable" id="ul4"> <li class="li2">list item</li> </ul> <button id="itembutton4">Add new list item</button> </li>').appendTo(".ul1"); 
+            $('<li class="li1 listbolck"> <div class="padtop"></div> <h3 class="ttl"><span class="titel">Done</span><i class="fa fa-ellipsis-h thrdt2" aria-hidden="true"></i></h3><div class="padtop"></div> <ul class="ul3 sortable alngctr1"> <li class="li2"> <form id="myForm"> <textarea type="text" class="ui-widget-content itemstyl" value="" id="txtfld" placeholder="Enter a title for this card…"></textarea> <button type="button" id="submitBtn" class="btnitm">Add Card</button> <i id="rmu" class="fa fa-times cnl" aria-hidden="true"></i><i class="fa fa-ellipsis-h thrdt" aria-hidden="true"></i> </form> </li> </ul> <button id="itembutton4"><i class="fa fa-plus cnl" aria-hidden="true"></i>Add another card</button> </li>').appendTo(".ul1"); 
         });
     });
 	  
 	    $(document).ready(function(){
         $(".itembutton").click(function(){
-            $(".ul2").append("<li class=\"li2\">list item</li>"); 
+            $(".ul2").append('<li class="li2"><p id="txt"></p> <form id="myForm"> <input placeholder="Enter a title for this card…" type="text" name="first-name" class="itemstyl" id="txtfld"> <button type="button" id="submitBtn" class="btnitm">Add Card</button><i id="rmu" class="fa fa-times cnl" aria-hidden="true"></i><i class="fa fa-ellipsis-h thrdt" aria-hidden="true"></i></form></li>'); 
         });
     });
 	    $(document).ready(function(){
         $(".itembutton2").click(function(){
-            $(".ul3").append("<li class=\"li2\">list item</li>"); 
+            $(".ul3").append('<li class="li2"><p id="txt"></p> <form id="myForm"> <input placeholder="Enter a title for this card…" type="text" name="first-name" class="itemstyl" id="txtfld"> <button type="button" id="submitBtn" class="btnitm">Add Card</button><i id="rmu" class="fa fa-times cnl" aria-hidden="true"></i><i class="fa fa-ellipsis-h thrdt" aria-hidden="true"></i></form></li>'); 
         });
     });
   
@@ -75,66 +220,25 @@ $(document).ready(function(){
         $("#itembutton4").click(function(){
             $("#ul4").append("<li class=\"li2\">list item</li>"); 
         }); });
-  </script>
-</head>
-<body>
- <header>
-	
-<h1>Work Sheet </h1>
-	
-	</header>
-	<nav>
-	<h2>Shanmukha</h2>
-	</nav>
-	<section>
-	  
-    <ul class="ul1 sortable" id="sortable">
-		
-		<!--1block s-->
-        <li class="li1 listbolck"><span class=""></span>
-			
-			
-			<h3 class="ttl">Assigned</h3>
-			<ul class="ul2 sortable">
-        <li class="li2">list item</li>
-        
-    </ul>
-		
-		<button class="itembutton">Add new list item</button>
+		$(document).ready(function(){
+    $("#submitBtn").click(function(){        
+        $('#txt').html($('textarea:text').val());
+        $('#txt').html($('input:text').val());
+		$("#submitBtn").remove();
+		$("#txtfld").remove();
+		//$("#btn").append('<button type="button" id="submitBtn1" class="btnitm">clr	</button>');
 
-		</li>
-		<!--1block s-->
-		<!--2block s-->
-		
-        <li class="li1 listbolck"><span class=""></span>
-		
-		<h3 class="ttl">Doing</h3>
-			
-		<ul class="ul3 sortable">
-        <li class="li2">list item</li>
-        
-    </ul>
-		<button class="itembutton2">Add new list item</button>
-		</li>
-		
-		<!--2block s-->
-        
-    </ul>
-		<button id="listbutton"><i class="fa fa-plus" aria-hidden="true"></i>Add new list</button>
-	</section>
+		// Submit the form
+    });
+});
+$(document).ready(function(){
 	
-	
-	
-<!--<ul class="sortable">
-  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1</li>
-  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 2</li>
-  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 3</li>
-  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 4</li>
-  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 5</li>
-  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 6</li>
-  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 7</li>
-</ul>-->
- 
- 
+	$("#rmu").click(function(){
+		$("#rm").remove();
+		//$('#txt').remove();
+		//$('#submitBtn1').remove();
+		});
+	});
+  </script>
 </body>
 </html>
