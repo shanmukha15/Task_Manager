@@ -144,12 +144,12 @@ height:30px;width:30px;border-top-right-radius:3px;border-bottom-right-radius:3p
         </div>
         <ul class="ul2 sortable alngctr">
         <li class="li2" id="rm">
-            <p id="txt"></p>
+            <p id="txt" class=""></p>
             <form id="myForm">
             
             <!--<input type="text" name="first-name" class="itemstyl ui-widget-content itemstyl" id="txtfld">-->
             <textarea type="text" class="ui-widget-content itemstyl" value="" id="txtfld" placeholder="Enter a title for this card…"></textarea>
-            <button type="button" id="submitBtn" class="btnitm">Add Card</button>
+            <button type="button" id="submitBtn" class="btnitm" onclick="posttxt()">Add Card</button>
             <i id="rmu" class="fa fa-times cnl" aria-hidden="true"></i><i class="fa fa-ellipsis-h thrdt" aria-hidden="true"></i>
           </form>
           </li>
@@ -162,12 +162,13 @@ height:30px;width:30px;border-top-right-radius:3px;border-bottom-right-radius:3p
     <li class="li1 listbolck">
     <div class="padtop"></div>
         <h3 class="ttl"><span class="titel">Doing</span><i class="fa fa-ellipsis-h thrdt2" aria-hidden="true"></i></h3>
-        <div class="padtop"></div>
+        
         <ul class="ul3 sortable alngctr1">
-        <li class="li2">
+        <li class="li2" id="rm1">
+        <p id="txt1" class=""></p>
             <form id="myForm">
-            <textarea type="text" class="ui-widget-content itemstyl" value="" id="txtfld" placeholder="Enter a title for this card…"></textarea>
-            <button type="button" id="submitBtn" class="btnitm">Add Card</button>
+            <textarea type="text" class="ui-widget-content itemstyl" value="" id="txtfld1" placeholder="Enter a title for this card…"></textarea>
+            <button type="button" id="submitBtn" class="btnitm" onclick="posttxt1()">Add Card</button>
             <i id="rmu" class="fa fa-times cnl" aria-hidden="true"></i><i class="fa fa-ellipsis-h thrdt" aria-hidden="true"></i>
           </form>
           </li>
@@ -206,12 +207,12 @@ height:30px;width:30px;border-top-right-radius:3px;border-bottom-right-radius:3p
 	  
 	    $(document).ready(function(){
         $(".itembutton").click(function(){
-            $(".ul2").append('<li class="li2"><p id="txt"></p> <form id="myForm"> <input placeholder="Enter a title for this card…" type="text" name="first-name" class="itemstyl" id="txtfld"> <button type="button" id="submitBtn" class="btnitm">Add Card</button><i id="rmu" class="fa fa-times cnl" aria-hidden="true"></i><i class="fa fa-ellipsis-h thrdt" aria-hidden="true"></i></form></li>'); 
+            $(".ul2").append('<li class="li2"><p id="txt"></p> <form id="myForm"> <textarea type="text" class="ui-widget-content itemstyl" value="" id="txtfld" placeholder="Enter a title for this card…"></textarea> <button type="button" id="submitBtn" class="btnitm" onclick="posttxt()">Add Card</button><i id="rmu" class="fa fa-times cnl" aria-hidden="true"></i><i class="fa fa-ellipsis-h thrdt" aria-hidden="true"></i></form></li>'); 
         });
     });
 	    $(document).ready(function(){
         $(".itembutton2").click(function(){
-            $(".ul3").append('<li class="li2"><p id="txt"></p> <form id="myForm"> <input placeholder="Enter a title for this card…" type="text" name="first-name" class="itemstyl" id="txtfld"> <button type="button" id="submitBtn" class="btnitm">Add Card</button><i id="rmu" class="fa fa-times cnl" aria-hidden="true"></i><i class="fa fa-ellipsis-h thrdt" aria-hidden="true"></i></form></li>'); 
+            $(".ul3").append('<li class="li2"><p id="txt"></p> <form id="myForm"> <textarea type="text" class="ui-widget-content itemstyl" value="" id="txtfld1" placeholder="Enter a title for this card…"></textarea> <button type="button" id="submitBtn" class="btnitm" onclick="posttxt()">Add Card</button><i id="rmu" class="fa fa-times cnl" aria-hidden="true"></i><i class="fa fa-ellipsis-h thrdt" aria-hidden="true"></i></form></li>'); 
         });
     });
   
@@ -225,6 +226,7 @@ $(document).ready(function(){
         $('#txt').html($('textarea:text').val());
         $('#txt').html($('input:text').val());
 		$("#submitBtn").remove();
+		
 		$("#txtfld").remove();
 		//$("#btn").append('<button type="button" id="submitBtn1" class="btnitm">clr	</button>');
 
@@ -239,6 +241,26 @@ $(document).ready(function(){
 		//$('#submitBtn1').remove();
 		});
 	});
+	$(document).ready(function(){
+	
+	$(".cnl").click(function(){
+		$("#rm1").remove();
+		//$('#txt').remove();
+		//$('#submitBtn1').remove();
+		});
+	});
+	function posttxt() {
+  var x = document.getElementById("txtfld").value;
+  document.getElementById("txt").innerHTML = x;
+}
+	function posttxt1() {
+  var x = document.getElementById("txtfld1").value;
+  document.getElementById("txt1").innerHTML = x;
+}
+function postlist() {
+	document.getElementByClass("ul1").innerHTML = '<li class="li1 listbolck"> <div class="padtop"></div> <h3 class="ttl"><span class="titel">Done</span><i class="fa fa-ellipsis-h thrdt2" aria-hidden="true"></i></h3><div class="padtop"></div> <ul class="ul3 sortable alngctr1"> <li class="li2"> <form id="myForm"> <textarea type="text" class="ui-widget-content itemstyl" value="" id="txtfld" placeholder="Enter a title for this card…"></textarea> <button type="button" id="submitBtn" class="btnitm">Add Card</button> <i id="rmu" class="fa fa-times cnl" aria-hidden="true"></i><i class="fa fa-ellipsis-h thrdt" aria-hidden="true"></i> </form> </li> </ul> <button id="itembutton4"><i class="fa fa-plus cnl" aria-hidden="true"></i>Add another card</button> </li>';
+	
+	}
   </script>
 </body>
 </html>
